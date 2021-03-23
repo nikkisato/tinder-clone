@@ -1,3 +1,5 @@
+import firebase from 'firebase';
+
 const firebaseConfig = {
   apiKey: 'AIzaSyCSQ9zDrtL9yAju4fPwYnzJJch5h9SdZ08',
   authDomain: 'tinder-clone-7c3e2.firebaseapp.com',
@@ -6,3 +8,9 @@ const firebaseConfig = {
   messagingSenderId: '550874617375',
   appId: '1:550874617375:web:42920e478b970a0fba672a',
 };
+
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+const database = firebaseApp.firestore();
+
+export default database;
