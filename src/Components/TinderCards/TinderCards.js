@@ -12,8 +12,8 @@ function TinderCards() {
       .onSnapshot(snapshot => setPeople(snapshot.docs.map(doc => doc.data())));
   }, []);
   return (
-    <div className='tinderCards__shadow'>
-      <div className='tinderCards__cardContainer'>
+    <div>
+      <div className='tinderCards__cardContainer '>
         {people.map(person => (
           <TinderCard
             className='swipe'
@@ -21,9 +21,7 @@ function TinderCards() {
             preventSwipe={['up', 'down']}
           >
             <div
-              style={{
-                backgroundImage: `url(${person.url})`,
-              }}
+              style={{ backgroundImage: `url(${person.url})` }}
               className='card'
             >
               <h3>{person.name}</h3>

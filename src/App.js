@@ -2,28 +2,29 @@ import './App.css';
 import Header from './Components/Header/Header';
 import TinderCards from './Components/TinderCards/TinderCards';
 import SwipeButtons from './Components/SwipeButtons/SwipeButtons';
+import ChatScreen from './Components/ChatScreen/ChatScreen';
+import Chats from './Components/Chats/Chats';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 function App() {
   return (
     <div className='app'>
       <Router>
-        <Header />
         <Switch>
-          <Route path='/chats'>
-            <h1>I am Chat page</h1>
+          <Route path='/chat/:person'>
+            <Header backButton='/chat' />
+            <ChatScreen />
+          </Route>
+          <Route path='/chat'>
+            <Header backButton='/' />
+            <Chats />
           </Route>
           <Route path='/'>
+            <Header />
             <TinderCards />
             <SwipeButtons />
           </Route>
         </Switch>
       </Router>
-
-      {/*Tinder Card*/}
-      {/*Buttons below tinder cards*/}
-
-      {/*Chats Screen*/}
-      {/*Individual chat screen*/}
     </div>
   );
 }
